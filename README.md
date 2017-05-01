@@ -4,8 +4,9 @@ Lightweight Wordpress on Alpine with php-fpm ondemand and SQLite instead of MySQ
 ```bash
 docker pull milanb/wordpress-sqlite
 ```
+[Docker Hub milanb/wordpress-sqlite](https://hub.docker.com/r/milanb/wordpress-sqlite/)
 
-Can be used in conjunction with [wordpress-nginx](https://github.com/milanboers/wordpress-nginx) to provide a full lightweight Wordpress solution.
+Can be used in conjunction with [wordpress-nginx](https://github.com/milanboers/wordpress-nginx) ([Docker Hub milanb/wordpress-nginx](https://hub.docker.com/r/milanb/wordpress-nginx/)) to provide a full lightweight Wordpress solution.
 
 Example docker-compose.yml for both:
 ```yaml
