@@ -10,7 +10,7 @@ Can be used in conjunction with [wordpress-nginx](https://github.com/milanboers/
 
 Example docker-compose.yml for both:
 ```yaml
-version: '3'
+version: '2'
 services:
     wp:
         image: milanb/wordpress-sqlite
@@ -19,16 +19,14 @@ services:
             - WP_SITEURL=https://mysite.com
         volumes:
             - db:/var/www/db
-            - html:/var/www/html
             - uploads:/var/www/html/wp-content/uploads
         restart: always
     http:
         image: milanb/wordpress-nginx
         links:
             - wp:wordpress
-        volumes:
-            - html:/var/www/html
-            - uploads:/var/www/html/wp-content/uploads
+        volumes_from:
+            - wp
         ports:
             - "8081:80"
 volumes:
@@ -36,5 +34,4 @@ volumes:
         external: true
     uploads:
         external: true
-    html:
 ```
