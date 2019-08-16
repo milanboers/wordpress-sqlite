@@ -8,7 +8,7 @@ RUN sed -i 's/pm = dynamic/pm = ondemand/g' /usr/local/etc/php-fpm.d/www.conf
 RUN apk add --update curl unzip && rm -Rf /var/cache/apk/*
 
 # Sqlite integration plugin
-RUN curl -o /tmp/wpplugin.zip https://downloads.wordpress.org/plugin/sqlite-integration.1.8.1.zip
+RUN curl -o /tmp/wpplugin.zip https://github.com/alpipego/wp-sqlite-integration/archive/master.zip
 RUN unzip /tmp/wpplugin.zip -d /usr/src/wordpress/wp-content/plugins/
 RUN rm /tmp/wpplugin.zip
 # Setup
